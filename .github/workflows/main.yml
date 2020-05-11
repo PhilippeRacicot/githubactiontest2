@@ -18,7 +18,9 @@ jobs:
           ref: v1
           token: ${{ secrets.GIT_HUB_TOKEN }}   # stored in GitHub secrets
           path: .
-          who-to-greet: 'Mona the Octocat'
-          # Use the output from the `hello` step
+      - name: Run My Action
+          uses: ./
+          with:
+            - who-to-greet: 'Mona the Octocat'
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
