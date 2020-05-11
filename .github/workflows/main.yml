@@ -8,11 +8,11 @@ jobs:
     - name: Hello world action step
       id: hello
       uses: bagbyte/use-private-action@v0.0.2
+      with:
+        private-action: PhilippeRacicot/githubactiontest@v1
+        private-action-token: ${{ secrets.GIT_HUB_TOKEN }}
         with:
-          private-action: PhilippeRacicot/githubactiontest@v1
-          private-action-token: ${{ secrets.GIT_HUB_TOKEN }}
-          with:
-            who-to-greet: 'Mona the Octocat'
+          who-to-greet: 'Mona the Octocat'
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
