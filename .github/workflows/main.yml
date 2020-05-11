@@ -14,6 +14,7 @@ jobs:
       - name: Checkout GitHub Action Repo
         uses: actions/checkout@v2
         with:
+          persist-credentials: false
           repository: PhilippeRacicot/githubactiontest
           ref: v1
           path: .
