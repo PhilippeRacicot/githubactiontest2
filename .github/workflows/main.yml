@@ -19,6 +19,7 @@ jobs:
           token: ${{ secrets.GIT_HUB_TOKEN }}   # stored in GitHub secrets
           path: .
       - name: Hello world action step
+        id: hello
         uses: ./
         with:
           who-to-greet: 'Mona the Octocat'
