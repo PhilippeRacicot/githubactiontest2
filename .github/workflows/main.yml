@@ -17,6 +17,6 @@ jobs:
           repository: PhilippeRacicot/githubactiontest
           ref: v1
           token: ${{ secrets.GIT_HUB_TOKEN }}   # stored in GitHub secrets
-          path: .github/workflows/greetings
+          path: .
       - name: Run My Action
-        uses: ./..github/workflows/greetings
+        uses: ./
