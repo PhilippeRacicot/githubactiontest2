@@ -16,11 +16,10 @@ jobs:
         with:
           repository: PhilippeRacicot/githubactiontest
           ref: v1
-          token: ${{ secrets.GIT_HUB_TOKEN }}   # stored in GitHub secrets
           path: .
       - name: Hello world action step
         id: hello
-        uses: ./
+        uses: ./workflows/main
         with:
           who-to-greet: 'Mona the Octocat'
       - name: Get the output time
