@@ -18,9 +18,10 @@ jobs:
           ref: v1
           token: ${{ secrets.GIT_HUB_TOKEN }}   # stored in GitHub secrets
           path: .
-      - name: Run My Action
-          uses: ./
-          with:
-            - who-to-greet: 'Mona the Octocat'
+      - name: Hello world action step
+        id: hello
+        uses: ./
+        with:
+          - who-to-greet: 'Mona the Octocat'
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
