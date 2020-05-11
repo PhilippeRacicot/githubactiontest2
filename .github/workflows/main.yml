@@ -1,18 +1,25 @@
-on: [push]
+name: Awesome Action
+
+on: ['push']
 
 jobs:
-  hello_world_job:
+  awesome:
+    name: Awesome Action
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: bagbyte/use-private-action@v0.0.2
-      with:
-        private-action: PhilippeRacicot/githubactiontest@v1
-        private-action-token: ${{ secrets.GIT_HUB_TOKEN }}
+      # checkout this repo
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      # checkout the private repo containing the action to run
+      - name: Checkout GitHub Action Repo
+        uses: actions/checkout@v2
         with:
-          who-to-greet: 'Mona the Octocat'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+          repository: PhilippeRacicot/githubactiontest
+          ref: v1
+          token: ${{ secrets.GIT_HUB_TOKEN }}   # stored in GitHub secrets
+          path: .
+          with:
+            who-to-greet: 'Mona the Octocat'
+          # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
