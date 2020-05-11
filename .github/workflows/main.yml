@@ -10,17 +10,9 @@ jobs:
       # checkout this repo
       - name: Checkout Repo
         uses: actions/checkout@v2
-      # checkout the private repo containing the action to run
-      - name: Checkout GitHub Action Repo
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-          repository: PhilippeRacicot/githubactiontest
-          ref: v1
-          path: .
       - name: Hello world action step
         id: hello
-        uses: ./workflows/main
+        uses: ./githubactiontest/workflows/main
         with:
           who-to-greet: 'Mona the Octocat'
       - name: Get the output time
