@@ -8,8 +8,8 @@ jobs:
     - name: Hello world action step
       id: hello
       uses: bagbyte/use-private-action@v0.0.2
-        with: PhilippeRacicot/githubactiontest@v1
-          private-action:
+        with:
+          private-action: PhilippeRacicot/githubactiontest@v1
           private-action-token: ${{ secrets.GIT_HUB_TOKEN }}
       with:
         who-to-greet: 'Mona the Octocat'
