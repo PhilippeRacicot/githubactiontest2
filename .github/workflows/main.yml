@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # checkout this repo
+      - name: Checkout Repo
+        uses: actions/checkout@v2
       - name: Hello world action step
         id: hello
-        uses: /githubactiontest/workflows/main
+        uses: ../githubactiontest/workflows/main
         with:
           who-to-greet: 'Mona the Octocat'
       - name: Get the output time
