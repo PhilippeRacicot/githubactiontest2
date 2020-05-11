@@ -1,0 +1,3 @@
+[submodule "githubactiontest"]
+	path = githubactiontest
+	url = https://github.com/PhilippeRacicot/githubactiontest.git
