@@ -7,6 +7,8 @@ jobs:
      runs-on: ubuntu-latest
      steps:
      - uses: actions/checkout@v2
+     - name: check dir
+       run: ls
      - name: Hello world action step
        id: hello
        uses: ./main
