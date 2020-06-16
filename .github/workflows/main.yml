@@ -10,8 +10,6 @@ jobs:
       # checkout this repo
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: check dir1
-        run: ls
       # checkout the private repo containing the action to run
       - name: Checkout GitHub Action Repo
         uses: actions/checkout@v2
@@ -21,6 +19,10 @@ jobs:
           token: ${{ secrets.GIT_HUB_TOKEN }}   # stored in GitHub secrets
           path: .
       - name: check dir
+        run: ls
+      - name: ret
+        run: cd ..
+      - name: check dir2
         run: ls
       - name: Hello world action step
         id: hello
