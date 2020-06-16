@@ -10,6 +10,8 @@ jobs:
       # checkout this repo
       - name: Checkout Repo
         uses: actions/checkout@v2
+      - name: check dir1
+        run: ls
       # checkout the private repo containing the action to run
       - name: Checkout GitHub Action Repo
         uses: actions/checkout@v2
