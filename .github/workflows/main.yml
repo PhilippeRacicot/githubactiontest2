@@ -15,6 +15,6 @@ jobs:
      - name: Get the output time
        run: echo "The time was ${{ steps.hello.outputs.time }}"
      - name: test
-         id: hello
-         uses: ./githubactiontest/test
+       id: hello2
+       uses: ./githubactiontest/test
 
